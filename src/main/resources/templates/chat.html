@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Ollama Chat</title>
+</head>
+<body>
+<h1>Chat with Ollama</h1>
+<form method="post" action="/chat">
+    <input type="text" name="userMessage" required />
+    <button type="submit">Send</button>
+</form>
+
+<div th:if="${conversation}">
+    <ul>
+        <li th:each="line : ${conversation}">
+            <span th:text="${line}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
