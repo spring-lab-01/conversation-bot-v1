@@ -8,6 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -38,6 +43,10 @@ public class OllamaService {
         } catch (Exception e) {
             return "Error parsing response: " + e.getMessage();
         }
+    }
+
+    public interface TokenCallback {
+        void onToken(String token);
     }
 }
 
