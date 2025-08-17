@@ -4,15 +4,12 @@ package com.example.ai_demo;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.http.*;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,11 +20,14 @@ public class OllamaService {
     private final RestTemplate restTemplate = new RestTemplate();
     private final ObjectMapper mapper = new ObjectMapper();
 
+    @Value("${model.name}")
+    private String modelName;
+
     public String askOllama(String prompt) {
         String url = "http://localhost:11434/api/generate";
 
         Map<String, Object> requestBody = new HashMap<>();
-        requestBody.put("model", "llama3");
+        requestBody.put("model", modelName);
         requestBody.put("prompt", prompt);
         requestBody.put("stream", false);
 
