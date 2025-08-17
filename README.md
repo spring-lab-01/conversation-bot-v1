@@ -48,7 +48,7 @@ cd conversation-bot-v1
 
 2. Run Ollama model
 ```bash
-ollama run llama3
+ollama run llama3.1:latest
 ```
 
 3. Run the Spring Boot app
