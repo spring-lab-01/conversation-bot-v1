@@ -1,6 +1,5 @@
 package com.example.ai_demo;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -9,9 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequiredArgsConstructor
 public class ChatController {
 
+    public ChatController(OllamaService ollamaService){
+        this.ollamaService = ollamaService;
+    }
     private final OllamaService ollamaService;
     private final List<String> conversation = new ArrayList<>();
 

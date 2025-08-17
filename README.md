@@ -3,32 +3,28 @@
 A real-time conversational web app built with:
 
 - **Spring Boot** (backend)
-- **WebSockets** (token-by-token streaming)
 - **Thymeleaf + Bootstrap** (responsive UI)
-- **Ollama** (local LLM engine like `llama3` or `mistral`)
+- **[Ollama](https://ollama.com/)** (local LLM engine to run LLM locally like `llama3` or `mistral`)
 
 ## Demo
-![](ai-demo-spring.mp4)
+![](demo.png)
 
 
 ## Features
 
-- Real-time **token-by-token** AI response from Ollama
-- Streamed **Markdown + Code block rendering**
-- Clean, responsive UI with **avatars and typing indicator**
-- 100% local and private – uses your Ollama model (e.g., `llama3`, `mistral`, etc.)
+- 100% local and private
 
 ---
 
 ## Tech Stack
 
-| Layer         | Technology               |
-|---------------|--------------------------|
-| Backend       | Spring Boot, WebSocket   |
-| Frontend      | Thymeleaf, Bootstrap 5   |
-| AI Engine     | Ollama (running locally) |
-| Build Tool    | Maven                    |
-| Java Version  | Java 21                  |
+| Layer        | Technology             |
+|--------------|------------------------|
+| Backend      | Spring Boot   |
+| Frontend     | Thymeleaf, Bootstrap 5 |
+| AI Engine    | Ollama (running locally) |
+| Build Tool   | Maven                  |
+| Java Version | Java 21                |
 
 ---
 
